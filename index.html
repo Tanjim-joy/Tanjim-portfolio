@@ -74,7 +74,7 @@
       <div class="row">
         <div class="info">
           <h3><span> name : </span> Md. Tangimul Haque</h3>
-          <h3><span> DOB : </span> 19th december 1994</h3>
+          <h3 id="dob"></h3>
           <h3><span> qualification : </span> BSc in Computer Science</h3>
 
           <!--<h3> <span> post : </span> Full Stack Web developer </h3>-->
@@ -87,7 +87,7 @@
 
         <div class="counter">
           <div class="box">
-            <span>1+</span>
+            <span>2+</span>
             <h3>years of experience</h3>
           </div>
 
@@ -381,6 +381,33 @@
       function myFunction() {
         document.getElementById("myForm").submit();
       }
+
+      let dd = 19;
+      let dm = 12;
+      let dy = 1994;
+
+      var date = new Date();
+      var d2 = date.getDate();
+      var m2 = 1 + date.getMonth();
+      var y2 = date.getFullYear();
+
+      var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+      if (dd > d2) {
+        d2 = d2 + month[m2 - 1];
+        m2 = m2 - 1;
+      }
+      if (dm > m2) {
+        m2 = m2 + 12;
+        y2 = y2 - 1;
+      }
+      var d = d2 - dd;
+      var m = m2 - dm;
+      var y = y2 - dy;
+      document.getElementById("dob").innerHTML = `     
+            <span> Age : </span>
+            ${y} years ${m} months ${d} Days    
+      `;
     </script>
   </body>
 </html>
